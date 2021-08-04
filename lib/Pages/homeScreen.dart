@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:myportfolio/Pages/navbar/navBar.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
@@ -26,13 +27,11 @@ class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     return Material(
-      child: NotificationListener<ScrollNotification>(
+      child: Listener(
         // ignore: non_constant_identifier_names
-        onNotification: (ScrollNotification scrollNotification) {
-          if (scrollNotification is ScrollEndNotification) {
+        onPointerSignal: (pointerSignal) {
+          if (pointerSignal is PointerScrollEvent)
             Navigator.pushNamed(context, HomeRouter);
-          }
-          return true;
         },
         child: Stack(children: <Widget>[
           Column(

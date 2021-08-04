@@ -1,5 +1,4 @@
 // ignore: import_of_legacy_library_into_null_safe
-import 'dart:html';
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flip_card/flip_card.dart';

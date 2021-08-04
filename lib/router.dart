@@ -9,8 +9,8 @@ import 'package:myportfolio/routerConstant.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
-    case AboutmeRouter:
-      return CupertinoPageRoute(builder: (context) => Aboutme());
+    // case AboutmeRouter:
+    //   return CupertinoPageRoute(builder: (context) => Aboutme());
     case ContactRouter:
       return CupertinoPageRoute(builder: (context) => Contact());
     case HomeRouter:

@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:myportfolio/routerConstant.dart';
-
-
+import 'package:myportfolio/widget/footer.dart';
 
 class Navibar extends StatelessWidget {
   @override
@@ -66,7 +65,11 @@ class DesktopNavbar extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AboutmeRouter);
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => BottomBar(),
+                          ));
                     },
                     child: Text("About Me",
                         style: TextStyle(color: Colors.white))),
