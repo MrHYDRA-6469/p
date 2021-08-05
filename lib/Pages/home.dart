@@ -1,7 +1,7 @@
 // ignore: import_of_legacy_library_into_null_safe
 
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flip_card/flip_card.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -115,33 +115,33 @@ class DesktopHome extends StatelessWidget {
                         ),
                         Container(
                           alignment: Alignment.centerLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.3,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'Digital Marketing',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 50,
-                                      color: Colors.black,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.3,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Digital Marketing',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 50,
+                                        color: Colors.black,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                    alignment: Alignment.topLeft,
-                                    width:
-                                        MediaQuery.of(context).size.width * 0.3,
-                                    child: SingleChildScrollView(
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                      alignment: Alignment.topLeft,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
                                       child: RichText(
                                         text: TextSpan(
                                           text: 'I am Currenlty blogging at',
@@ -177,10 +177,10 @@ class DesktopHome extends StatelessWidget {
                                                     "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n")
                                           ],
                                         ),
-                                      ),
-                                    )),
-                              ),
-                            ],
+                                      )),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -488,98 +488,147 @@ class DesktopHome extends StatelessWidget {
 }
 
 class MobileHome extends StatelessWidget {
-  const MobileHome({Key? key}) : super(key: key);
+  MobileHome({Key? key}) : super(key: key);
+  final TapGestureRecognizer _gestureRecognizer = TapGestureRecognizer()
+    ..onTap = () async {
+      final url = 'https://arpitytech.wordpress.com/';
+      if (await canLaunch(url)) {
+        await launch(
+          url,
+        );
+      }
+    };
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-        child: Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(
-        begin: Alignment.centerLeft,
-        end: Alignment.centerRight,
-        colors: [Colors.white, Colors.grey],
-      )),
-      child: SingleChildScrollView(
-        child: Column(children: [
-          Container(
-              width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                begin: Alignment.centerLeft,
-                end: Alignment.centerRight,
-                colors: [Colors.black, Colors.greenAccent, Colors.black],
-              )),
-              child: Navibar()),
-          CarouselSlider(
-              items: <Widget>[
-                Image(image: AssetImage('assests/images/WEB1.png')),
-                Image(image: AssetImage('assests/images/WEB1.png')),
-                Image(image: AssetImage('assests/images/WEB1.png')),
-                Image(image: AssetImage('assests/images/WEB1.png'))
-              ],
-              options: CarouselOptions(
-                  pauseAutoPlayOnTouch: true,
-                  autoPlay: true,
-                  viewportFraction: 1)),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.width * 0.8,
-            width: MediaQuery.of(context).size.width * 0.6,
+    return Scaffold(
+      appBar: AppBar(
+        // key: ,
+        toolbarHeight: 128,
+        automaticallyImplyLeading: false,
+        flexibleSpace: Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.centerRight,
-                  colors: [Colors.greenAccent, Colors.pinkAccent],
-                )),
-            child: FlipCard(
-                front: CarouselSlider(
-                    items: <Widget>[
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png'))
-                    ],
-                    options: CarouselOptions(
-                        pauseAutoPlayOnTouch: true,
-                        aspectRatio: 1 / 1,
-                        autoPlay: true,
-                        viewportFraction: 2)),
-                back: Text('helloo')),
-          ),
-          SizedBox(
-            height: 20,
-          ),
-          Container(
-            height: MediaQuery.of(context).size.width * 0.9,
-            width: MediaQuery.of(context).size.width * 0.7,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20),
-                gradient: LinearGradient(
-                  begin: Alignment.centerLeft,
-                  end: Alignment.bottomRight,
-                  colors: [Colors.greenAccent, Colors.green],
-                )),
-            child: FlipCard(
-                front: CarouselSlider(
-                    items: <Widget>[
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png')),
-                      Image(image: AssetImage('assests/images/WEB1.png'))
-                    ],
-                    options: CarouselOptions(
-                        pauseAutoPlayOnTouch: true,
-                        aspectRatio: 1 / 1,
-                        autoPlay: true,
-                        viewportFraction: 2)),
-                back: Text('helloo')),
-          )
-        ]),
+              begin: Alignment.centerLeft,
+              end: Alignment.centerRight,
+              colors: [Colors.black, Colors.greenAccent, Colors.black],
+            )),
+            child: Navibar()),
       ),
-    ));
+      body: SingleChildScrollView(
+        child: Container(
+          child: Column(children: [
+            CarouselSlider(
+                items: <Widget>[
+                  Image(image: AssetImage('assests/images/WEB1.png')),
+                  Image(image: AssetImage('assests/images/WEB1.png')),
+                  Image(image: AssetImage('assests/images/WEB1.png')),
+                  Image(image: AssetImage('assests/images/WEB1.png'))
+                ],
+                options: CarouselOptions(
+                    pauseAutoPlayOnTouch: true,
+                    autoPlay: true,
+                    viewportFraction: 1)),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.width * 0.7,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Colors.greenAccent, Colors.lightGreenAccent],
+                  )),
+              child: Container(
+                // height: 600,
+                width: 1700,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  elevation: 50,
+                  shadowColor: Colors.greenAccent,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              // alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Digital Marketing',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                                alignment: Alignment.topLeft,
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                // height:
+                                //     MediaQuery.of(context).size.width * 0.8,
+                                child: RichText(
+                                  text: TextSpan(
+                                    text: 'I am Currenlty blogging at',
+                                    style: TextStyle(
+                                      height: 1.5,
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: " arpitytech.com",
+                                          style: TextStyle(
+                                              color: Colors.blueAccent),
+                                          recognizer: _gestureRecognizer),
+                                      TextSpan(
+                                          text:
+                                              ' and learning the SEO techniques to rank my blogs with the help of of the following tools\n'),
+                                      TextSpan(
+                                          text:
+                                              '- GOOGLE ANALYTICS\n- GOOGLE TAG MANAGER\n- SEO QUAKE\n- SCREAMING FROG\n- MOZBAR\n- SEMRUSH\n- SQUARESPACE\n',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold)),
+                                      TextSpan(
+                                          text:
+                                              'I have accomplished the FUNDAMENTALS OF Digital Marketing offerred by Google.\n',
+                                          style: TextStyle(height: 1.5)),
+                                      TextSpan(
+                                          text: 'GUIDED PROJECTS\n',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              height: 3)),
+                                      TextSpan(
+                                          text:
+                                              "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n")
+                                    ],
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            )
+          ]),
+        ),
+      ),
+    );
   }
 }

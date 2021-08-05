@@ -1,12 +1,11 @@
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flip_card/flip_card.dart';
-import 'package:flutter/gestures.dart';
+
+
 import 'package:flutter/material.dart';
 import 'package:myportfolio/Pages/navbar/navBar.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-import '../../routerConstant.dart';
+
+
 
 class Community extends StatelessWidget {
   @override
@@ -45,15 +44,7 @@ class _DesktopHomeState extends State<DesktopHome> {
     super.dispose();
   }
 
-  final TapGestureRecognizer _gestureRecognizer = TapGestureRecognizer()
-    ..onTap = () async {
-      final url = 'https://arpitytech.wordpress.com/';
-      if (await canLaunch(url)) {
-        await launch(
-          url,
-        );
-      }
-    };
+ 
 
   final PageController controller = PageController(initialPage: 0);
 

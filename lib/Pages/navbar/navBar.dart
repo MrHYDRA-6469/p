@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+
 import 'package:myportfolio/routerConstant.dart';
-import 'package:myportfolio/widget/footer.dart';
 
 class Navibar extends StatelessWidget {
   @override
@@ -41,48 +42,48 @@ class DesktopNavbar extends StatelessWidget {
                     fontSize: 30),
               ),
             ),
-            Row(
-              children: <Widget>[
-                TextButton(
+            SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: <Widget>[
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, HomeRouter);
+                      },
+                      child: Text(
+                        "Home",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, CommunityRouter);
+                      },
+                      child: Text("Community",
+                          style: TextStyle(color: Colors.white))),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, AboutmeRouter);
+                      },
+                      child: Text("About Me",
+                          style: TextStyle(color: Colors.white))),
+                  SizedBox(
+                    width: 30,
+                  ),
+                  TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, HomeRouter);
+                      Navigator.pushNamed(context, ContactRouter);
                     },
-                    child: Text(
-                      "Home",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, CommunityRouter);
-                    },
-                    child: Text("Community",
-                        style: TextStyle(color: Colors.white))),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => BottomBar(),
-                          ));
-                    },
-                    child: Text("About Me",
-                        style: TextStyle(color: Colors.white))),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, ContactRouter);
-                  },
-                  child: Text("Contact", style: TextStyle(color: Colors.white)),
-                ),
-              ],
+                    child:
+                        Text("Contact", style: TextStyle(color: Colors.white)),
+                  ),
+                ],
+              ),
             )
           ],
         ),
@@ -97,6 +98,7 @@ class MobileNavbar extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 40),
       child: Container(
+        width: MediaQuery.of(context).size.width,
         child: Column(children: <Widget>[
           TextButton(
             onPressed: () {
@@ -111,46 +113,50 @@ class MobileNavbar extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(12.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                TextButton(
+            padding: const EdgeInsets.all(8.0),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, HomeRouter);
+                      },
+                      child: Text(
+                        "Home",
+                        style: TextStyle(color: Colors.white),
+                      )),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, CommunityRouter);
+                      },
+                      child: Text("Community",
+                          style: TextStyle(color: Colors.white))),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, AboutmeRouter);
+                      },
+                      child: Text("About Me",
+                          style: TextStyle(color: Colors.white))),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, HomeRouter);
+                      Navigator.pushNamed(context, ContactRouter);
                     },
-                    child: Text(
-                      "Home",
-                      style: TextStyle(color: Colors.white),
-                    )),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, CommunityRouter);
-                    },
-                    child: Text("Community",
-                        style: TextStyle(color: Colors.white))),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, AboutmeRouter);
-                    },
-                    child: Text("About Me",
-                        style: TextStyle(color: Colors.white))),
-                SizedBox(
-                  width: 30,
-                ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, ContactRouter);
-                  },
-                  child: Text("Contact", style: TextStyle(color: Colors.white)),
-                ),
-              ],
+                    child:
+                        Text("Contact", style: TextStyle(color: Colors.white)),
+                  ),
+                ],
+              ),
             ),
           )
         ]),
