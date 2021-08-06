@@ -488,7 +488,6 @@ class DesktopHome extends StatelessWidget {
 }
 
 class MobileHome extends StatelessWidget {
-  MobileHome({Key? key}) : super(key: key);
   final TapGestureRecognizer _gestureRecognizer = TapGestureRecognizer()
     ..onTap = () async {
       final url = 'https://arpitytech.wordpress.com/';
@@ -615,6 +614,126 @@ class MobileHome extends StatelessWidget {
                                       TextSpan(
                                           text:
                                               "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n")
+                                    ],
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.width * 0.7,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Colors.greenAccent, Colors.lightGreenAccent],
+                  )),
+              child: Container(
+                // height: 600,
+                width: 1700,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  elevation: 50,
+                  shadowColor: Colors.greenAccent,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              // alignment: Alignment.centerLeft,
+                              child: Text(
+                                'Flutter Development',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                                alignment: Alignment.topLeft,
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                // height:
+                                //     MediaQuery.of(context).size.width * 0.8,
+                                child: RichText(
+                                  text: TextSpan(
+                                    text:
+                                        '● Successfully hosted my portfolio on Digital ocean',
+                                    style: TextStyle(
+                                      height: 1.5,
+                                    ),
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text: "-https://arpityadav.live/ \n",
+                                          style: TextStyle(
+                                              color: Colors.blueAccent),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () async {
+                                              final url =
+                                                  'https://arpityadav.live/';
+                                              if (await canLaunch(url)) {
+                                                await launch(
+                                                  url,
+                                                );
+                                              }
+                                            }),
+                                      TextSpan(
+                                          text:
+                                              ' ● Contributed to developing UI of an eco commerce app and Prism wallpaper\n'),
+                                      TextSpan(
+                                          text:
+                                              "Prism is a beautiful open-source wallpapers app for Android. It is built with Dart on top of Google's Flutter Framework.\n Eco Commerce is a beautiful app build with Google's Flutter Framework. It aims to build a useful, and functional platform helping people to sell stuff.\n",
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 12)),
+                                      TextSpan(
+                                          text:
+                                              "● Ariel News app using news.API\n"),
+                                      TextSpan(
+                                          text:
+                                              "News App developed with Flutter featuring beautiful UI, category-based news, story for faster news reading, inbuilt article viewer, share feature, and more..\n",
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 12)),
+                                      TextSpan(text: "● E-learning App\n"),
+                                      TextSpan(
+                                          text:
+                                              "E-Learn is a beautiful open-source education app for Android. It is built with Dart on top of Google's Flutter Framework.\n",
+                                          style: TextStyle(
+                                              color: Colors.grey,
+                                              fontSize: 12)),
+                                      TextSpan(
+                                          text: 'SKILLS\n',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              height: 3)),
+                                      TextSpan(
+                                          text:
+                                              '● Programming Languages: C++, Python, DART\n ● Frameworks: Flutter Arduino\n ● Software Essentials: Git, VSCode\n ● Designing: Adobe Photoshop, Adobe Premiere, Adobe After Effects\n ● Other: Microsoft Office, GitHub\n ',
+                                          style: TextStyle(
+                                              fontWeight: FontWeight.w300)),
                                     ],
                                   ),
                                 )),
