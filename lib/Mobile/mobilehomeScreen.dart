@@ -17,15 +17,31 @@ class _MobilehomeScreenState extends State<MobilehomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final height = MediaQuery.of(context).size.height;
-    final width = MediaQuery.of(context).size.width;
-    String asset;
-
     return Scaffold(
       body: ParallaxStack(
         layers: [
           ParallaxLayer(
-              yRotation: 0.35, xOffset: 60, child: ParallaxWidget(top: 0)),
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset(
+                'assests/images/background.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+          ParallaxLayer(
+            yRotation: 0.35,
+            xOffset: 60,
+            child: Container(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Image.asset(
+                'assests/images/background.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           ParallaxLayer(
             yRotation: 0.35,
             xOffset: 50,
@@ -76,30 +92,6 @@ class _MobilehomeScreenState extends State<MobilehomeScreen> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class ParallaxWidget extends StatelessWidget {
-  const ParallaxWidget({
-    required this.top,
-  });
-
-  final double top;
-
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      // left: -45,
-      top: top,
-      child: Container(
-        width: MediaQuery.of(context).size.width,
-        height: MediaQuery.of(context).size.height,
-        child: Image.asset(
-          'assests/images/background.png',
-          fit: BoxFit.cover,
-        ),
       ),
     );
   }
