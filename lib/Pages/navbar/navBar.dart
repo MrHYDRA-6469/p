@@ -1,6 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:myportfolio/Pages/aboutMe.dart';
+import 'package:myportfolio/Pages/community/community.dart';
+import 'package:myportfolio/Pages/contact.dart';
+import 'package:myportfolio/Pages/home.dart';
+import 'package:myportfolio/Pages/homeScreen.dart';
+import 'package:myportfolio/router%20animation/scaleRoute.dart';
 
 import 'package:myportfolio/routerConstant.dart';
 
@@ -32,7 +38,7 @@ class DesktopNavbar extends StatelessWidget {
           children: <Widget>[
             TextButton(
               onPressed: () {
-                Navigator.pushNamed(context, HomescreenRouter);
+                Navigator.push(context, ScaleRoute(page: Homescreen()));
               },
               child: Text(
                 "Arpit Yadav",
@@ -48,7 +54,7 @@ class DesktopNavbar extends StatelessWidget {
                 children: <Widget>[
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, HomeRouter);
+                        Navigator.push(context, ScaleRoute(page: Home()));
                       },
                       child: Text(
                         "Home",
@@ -59,7 +65,7 @@ class DesktopNavbar extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, CommunityRouter);
+                        Navigator.push(context, ScaleRoute(page: Community()));
                       },
                       child: Text("Community",
                           style: TextStyle(color: Colors.white))),
@@ -68,7 +74,7 @@ class DesktopNavbar extends StatelessWidget {
                   ),
                   TextButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, AboutmeRouter);
+                        Navigator.push(context, ScaleRoute(page: Aboutme()));
                       },
                       child: Text("About Me",
                           style: TextStyle(color: Colors.white))),
@@ -77,7 +83,7 @@ class DesktopNavbar extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, ContactRouter);
+                      Navigator.push(context, ScaleRoute(page: Contact()));
                     },
                     child:
                         Text("Contact", style: TextStyle(color: Colors.white)),
@@ -119,41 +125,63 @@ class MobileNavbar extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, HomeRouter);
-                      },
-                      child: Text(
-                        "Home",
-                        style: TextStyle(color: Colors.white),
-                      )),
+                  ActionChip(
+                    autofocus: true,
+                    side: BorderSide(color: Colors.greenAccent),
+                    backgroundColor: Colors.white,
+                    label: Text(
+                      "Home",
+                      style: TextStyle(
+                          color: Colors.greenAccent,
+                          fontWeight: FontWeight.w400),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context, ScaleRoute(page: Home()));
+                    },
+                  ),
                   SizedBox(
                     width: 15,
                   ),
-                  TextButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, CommunityRouter);
-                      },
-                      child: Text("Community",
-                          style: TextStyle(color: Colors.white))),
+                  ActionChip(
+                    autofocus: true,
+                    side: BorderSide(color: Colors.greenAccent),
+                    backgroundColor: Colors.white,
+                    label: Text("Community",
+                        style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontWeight: FontWeight.w400)),
+                    onPressed: () {
+                      Navigator.pushNamed(context, CommunityRouter);
+                    },
+                  ),
                   SizedBox(
                     width: 15,
                   ),
-                  TextButton(
+                  ActionChip(
+                      autofocus: true,
+                      side: BorderSide(color: Colors.greenAccent),
+                      backgroundColor: Colors.white,
                       onPressed: () {
                         Navigator.pushNamed(context, AboutmeRouter);
                       },
-                      child: Text("About Me",
-                          style: TextStyle(color: Colors.white))),
+                      label: Text("About Me",
+                          style: TextStyle(
+                              color: Colors.greenAccent,
+                              fontWeight: FontWeight.w400))),
                   SizedBox(
                     width: 15,
                   ),
-                  TextButton(
+                  ActionChip(
+                    autofocus: true,
+                    side: BorderSide(color: Colors.greenAccent),
+                    backgroundColor: Colors.white,
                     onPressed: () {
                       Navigator.pushNamed(context, ContactRouter);
                     },
-                    child:
-                        Text("Contact", style: TextStyle(color: Colors.white)),
+                    label: Text("Contact",
+                        style: TextStyle(
+                            color: Colors.greenAccent,
+                            fontWeight: FontWeight.w400)),
                   ),
                 ],
               ),

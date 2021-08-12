@@ -146,6 +146,7 @@ class DesktopHome extends StatelessWidget {
                                         text: TextSpan(
                                           text: 'I am Currenlty blogging at',
                                           style: TextStyle(
+                                            color: Colors.black,
                                             height: 1.5,
                                           ),
                                           children: <TextSpan>[
@@ -161,20 +162,27 @@ class DesktopHome extends StatelessWidget {
                                                 text:
                                                     '- GOOGLE ANALYTICS    - GOOGLE TAG MANAGER    - SEO QUAKE\n- SCREAMING FROG        - MOZBAR                               - SEMRUSH\n- SQUARESPACE\n',
                                                 style: TextStyle(
+                                                    color: Colors.black,
                                                     fontWeight:
                                                         FontWeight.bold)),
                                             TextSpan(
                                                 text:
                                                     'I have accomplished the FUNDAMENTALS OF Digital Marketing offerred by Google.\n',
-                                                style: TextStyle(height: 1.5)),
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    height: 1.5)),
                                             TextSpan(
                                                 text: 'GUIDED PROJECTS\n',
                                                 style: TextStyle(
+                                                    color: Colors.black,
                                                     fontWeight: FontWeight.bold,
                                                     height: 3)),
                                             TextSpan(
                                                 text:
-                                                    "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n")
+                                                    "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n",
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                ))
                                           ],
                                         ),
                                       )),
@@ -206,8 +214,118 @@ class DesktopHome extends StatelessWidget {
                     elevation: 50,
                     shadowColor: Colors.greenAccent,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
+                        Container(
+                          alignment: Alignment.centerLeft,
+                          child: SingleChildScrollView(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.3,
+                                    alignment: Alignment.centerLeft,
+                                    child: Text(
+                                      'Flutter Development',
+                                      style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 50,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(20.0),
+                                  child: Container(
+                                      alignment: Alignment.topLeft,
+                                      width: MediaQuery.of(context).size.width *
+                                          0.3,
+                                      child: RichText(
+                                        text: TextSpan(
+                                          text:
+                                              '● Successfully hosted my portfolio on Digital ocean',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            height: 1.5,
+                                          ),
+                                          children: <TextSpan>[
+                                            TextSpan(
+                                                text:
+                                                    "-https://arpityadav.live/ \n",
+                                                style: TextStyle(
+                                                    color: Colors.blueAccent),
+                                                recognizer:
+                                                    TapGestureRecognizer()
+                                                      ..onTap = () async {
+                                                        final url =
+                                                            'https://arpityadav.live/';
+                                                        if (await canLaunch(
+                                                            url)) {
+                                                          await launch(
+                                                            url,
+                                                          );
+                                                        }
+                                                      }),
+                                            TextSpan(
+                                                text:
+                                                    ' ● Contributed to developing UI of an eco commerce app and Prism wallpaper\n',
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                )),
+                                            TextSpan(
+                                                text:
+                                                    "Prism is a beautiful open-source wallpapers app for Android. It is built with Dart on top of Google's Flutter Framework.\n Eco Commerce is a beautiful app build with Google's Flutter Framework. It aims to build a useful, and functional platform helping people to sell stuff.\n",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12)),
+                                            TextSpan(
+                                                text:
+                                                    "● Ariel News app using news.API\n",
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                )),
+                                            TextSpan(
+                                                text:
+                                                    "News App developed with Flutter featuring beautiful UI, category-based news, story for faster news reading, inbuilt article viewer, share feature, and more..\n",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12)),
+                                            TextSpan(
+                                                text: "● E-learning App\n",
+                                                style: TextStyle(
+                                                  color: Colors.black,
+                                                )),
+                                            TextSpan(
+                                                text:
+                                                    "E-Learn is a beautiful open-source education app for Android. It is built with Dart on top of Google's Flutter Framework.\n",
+                                                style: TextStyle(
+                                                    color: Colors.grey,
+                                                    fontSize: 12)),
+                                            TextSpan(
+                                                text: 'SKILLS\n',
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    height: 3)),
+                                            TextSpan(
+                                                text:
+                                                    '● Programming Languages: C++, Python, DART\n ● Frameworks: Flutter Arduino\n ● Software Essentials: Git, VSCode\n ● Designing: Adobe Photoshop, Adobe Premiere, Adobe After Effects\n ● Other: Microsoft Office, GitHub\n ',
+                                                style: TextStyle(
+                                                    color: Colors.black,
+                                                    fontWeight:
+                                                        FontWeight.w300)),
+                                          ],
+                                        ),
+                                      )),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
                         Padding(
                           padding: const EdgeInsets.all(20.0),
                           child: ClipRRect(
@@ -282,148 +400,6 @@ class DesktopHome extends StatelessWidget {
                                     pauseAutoPlayOnTouch: true,
                                     autoPlay: true,
                                     viewportFraction: 2)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 80,
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(0, 0, 80, 0),
-              child: Container(
-                alignment: Alignment.centerRight,
-                child: Container(
-                  height: 600,
-                  width: 1200,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
-                    elevation: 50,
-                    shadowColor: Colors.greenAccent,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: CarouselSlider(
-                                items: <Widget>[
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image:
-                                          AssetImage('assests/images/WEB1.png'))
-                                ],
-                                options: CarouselOptions(
-                                    aspectRatio: 4 / 4,
-                                    pauseAutoPlayOnTouch: true,
-                                    autoPlay: true,
-                                    viewportFraction: 2)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 80,
-            ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(80, 0, 0, 0),
-              child: Container(
-                alignment: Alignment.centerLeft,
-                child: Container(
-                  height: 600,
-                  width: 1200,
-                  child: Card(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                    elevation: 50,
-                    shadowColor: Colors.greenAccent,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(20.0),
-                            child: CarouselSlider(
-                                items: <Widget>[
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image: AssetImage(
-                                          'assests/images/WEB1.png')),
-                                  Image(
-                                      image:
-                                          AssetImage('assests/images/WEB1.png'))
-                                ],
-                                options: CarouselOptions(
-                                    aspectRatio: 4 / 4,
-                                    pauseAutoPlayOnTouch: true,
-                                    autoPlay: true,
-                                    viewportFraction: 2)),
-                          ),
-                        ),
-                        Container(
-                          alignment: Alignment.centerLeft,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.3,
-                                  alignment: Alignment.centerLeft,
-                                  child: Text(
-                                    'School',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 50,
-                                      color: Colors.black,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(20.0),
-                                child: Container(
-                                  alignment: Alignment.topLeft,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.3,
-                                  child: Text(
-                                    'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc,r ',
-                                    style: TextStyle(
-                                        fontSize: 14,
-                                        color: Colors.black,
-                                        decorationColor: Colors.black),
-                                  ),
-                                ),
-                              ),
-                            ],
                           ),
                         ),
                       ],
@@ -586,8 +562,7 @@ class MobileHome extends StatelessWidget {
                                   text: TextSpan(
                                     text: 'I am Currenlty blogging at',
                                     style: TextStyle(
-                                      height: 1.5,
-                                    ),
+                                        height: 1.5, color: Colors.black),
                                     children: <TextSpan>[
                                       TextSpan(
                                           text: " arpitytech.com",
@@ -596,24 +571,32 @@ class MobileHome extends StatelessWidget {
                                           recognizer: _gestureRecognizer),
                                       TextSpan(
                                           text:
-                                              ' and learning the SEO techniques to rank my blogs with the help of of the following tools\n'),
+                                              ' and learning the SEO techniques to rank my blogs with the help of of the following tools\n',
+                                          style:
+                                              TextStyle(color: Colors.black)),
                                       TextSpan(
                                           text:
                                               '- GOOGLE ANALYTICS\n- GOOGLE TAG MANAGER\n- SEO QUAKE\n- SCREAMING FROG\n- MOZBAR\n- SEMRUSH\n- SQUARESPACE\n',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.bold)),
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
                                               'I have accomplished the FUNDAMENTALS OF Digital Marketing offerred by Google.\n',
-                                          style: TextStyle(height: 1.5)),
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text: 'GUIDED PROJECTS\n',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              height: 3)),
+                                              height: 3,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
-                                              "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n")
+                                              "● Google Ads for Beginners\n ● Create a Business Marketing Brand Kit Using Canva\n ● Use Mailchimp to Build an E-mail Marketing Campaign\n ● Create an Email Autoresponder Using Mailchimp\n ● Search Engine Optimization (SEO) with Squarespace\n ● Optimizing Your Website's Keywords & Pages using Ubersuggest\n ● Create a 1-Page Marketing Plan with Google Docs\n ● Create a Business Marketing Brand Kit Using Canva\n",
+                                          style:
+                                              TextStyle(color: Colors.black)),
                                     ],
                                   ),
                                 )),
@@ -682,8 +665,7 @@ class MobileHome extends StatelessWidget {
                                     text:
                                         '● Successfully hosted my portfolio on Digital ocean',
                                     style: TextStyle(
-                                      height: 1.5,
-                                    ),
+                                        height: 1.5, color: Colors.black),
                                     children: <TextSpan>[
                                       TextSpan(
                                           text: "-https://arpityadav.live/ \n",
@@ -701,7 +683,10 @@ class MobileHome extends StatelessWidget {
                                             }),
                                       TextSpan(
                                           text:
-                                              ' ● Contributed to developing UI of an eco commerce app and Prism wallpaper\n'),
+                                              ' ● Contributed to developing UI of an eco commerce app and Prism wallpaper\n',
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
                                               "Prism is a beautiful open-source wallpapers app for Android. It is built with Dart on top of Google's Flutter Framework.\n Eco Commerce is a beautiful app build with Google's Flutter Framework. It aims to build a useful, and functional platform helping people to sell stuff.\n",
@@ -710,14 +695,21 @@ class MobileHome extends StatelessWidget {
                                               fontSize: 12)),
                                       TextSpan(
                                           text:
-                                              "● Ariel News app using news.API\n"),
+                                              "● Ariel News app using news.API\n",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
                                               "News App developed with Flutter featuring beautiful UI, category-based news, story for faster news reading, inbuilt article viewer, share feature, and more..\n",
                                           style: TextStyle(
                                               color: Colors.grey,
                                               fontSize: 12)),
-                                      TextSpan(text: "● E-learning App\n"),
+                                      TextSpan(
+                                          text: "● E-learning App\n",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
                                               "E-Learn is a beautiful open-source education app for Android. It is built with Dart on top of Google's Flutter Framework.\n",
@@ -728,12 +720,127 @@ class MobileHome extends StatelessWidget {
                                           text: 'SKILLS\n',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold,
-                                              height: 3)),
+                                              height: 3,
+                                              color: Colors.black)),
                                       TextSpan(
                                           text:
                                               '● Programming Languages: C++, Python, DART\n ● Frameworks: Flutter Arduino\n ● Software Essentials: Git, VSCode\n ● Designing: Adobe Photoshop, Adobe Premiere, Adobe After Effects\n ● Other: Microsoft Office, GitHub\n ',
                                           style: TextStyle(
-                                              fontWeight: FontWeight.w300)),
+                                              fontWeight: FontWeight.w300,
+                                              height: 1.5,
+                                              color: Colors.black)),
+                                    ],
+                                  ),
+                                )),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              height: MediaQuery.of(context).size.width * 0.7,
+              width: MediaQuery.of(context).size.width * 0.8,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    begin: Alignment.centerLeft,
+                    end: Alignment.centerRight,
+                    colors: [Colors.greenAccent, Colors.lightGreenAccent],
+                  )),
+              child: Container(
+                // height: 600,
+                width: 1700,
+                child: Card(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  elevation: 50,
+                  shadowColor: Colors.greenAccent,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      alignment: Alignment.centerLeft,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.8,
+                              // alignment: Alignment.centerLeft,
+                              child: Text(
+                                'College and School',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 22,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(20.0),
+                            child: Container(
+                                alignment: Alignment.topLeft,
+                                width: MediaQuery.of(context).size.width * 0.8,
+                                // height:
+                                //     MediaQuery.of(context).size.width * 0.8,
+                                child: RichText(
+                                  text: TextSpan(
+                                    text:
+                                        '-Netaji Subhas University of Technology \n',
+                                    style: TextStyle(color: Colors.blueAccent),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () async {
+                                        final url = 'https://arpityadav.live/';
+                                        if (await canLaunch(url)) {
+                                          await launch(
+                                            url,
+                                          );
+                                        }
+                                      },
+                                    children: <TextSpan>[
+                                      TextSpan(
+                                          text:
+                                              '-Bachelor of Engineering in Electronics and communication(2018-2022). \n \n',
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
+                                      TextSpan(
+                                          text:
+                                              '-Delhi United Christian Senior Secondary School. \n',
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () async {
+                                              final url =
+                                                  'https://arpityadav.live/';
+                                              if (await canLaunch(url)) {
+                                                await launch(
+                                                  url,
+                                                );
+                                              }
+                                            },
+                                          style: TextStyle(
+                                            height: 1.5,
+                                          )),
+                                      TextSpan(
+                                          text:
+                                              "Class XII (2016-2017), \nCBSE Board: PCM \n Score : 84%\n",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
+                                      TextSpan(
+                                          text:
+                                              "Class X (2014-2015), \nCBSE Board\n CPGA :8.20 \n",
+                                          style: TextStyle(
+                                              height: 1.5,
+                                              color: Colors.black)),
                                     ],
                                   ),
                                 )),
