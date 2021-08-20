@@ -1,6 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:myportfolio/Mobile/mfooter.dart';
 import 'package:myportfolio/Pages/navbar/navBar.dart';
+import 'package:myportfolio/routerConstant.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Mhome extends StatefulWidget {
@@ -47,7 +50,22 @@ class _MhomeState extends State<Mhome> {
       floatingActionButton: Visibility(
         visible: isVisible,
         child: FloatingActionButton(
-            child: Icon(Icons.arrow_upward), onPressed: null),
+            backgroundColor: Colors.greenAccent,
+            mini: true,
+            focusElevation: 0,
+            foregroundColor: Colors.greenAccent,
+            hoverElevation: 100,
+            hoverColor: Colors.greenAccent,
+            child: Icon(
+              Icons.arrow_upward,
+              color: Colors.white,
+            ),
+            onPressed: () {
+              // setState(() {
+
+              // });
+              Navigator.pushNamed(context, HomeRouter);
+            }),
       ),
       // floatingActionButtonLocation: ,
       body: SingleChildScrollView(
@@ -412,6 +430,7 @@ class _MhomeState extends State<Mhome> {
             SizedBox(
               height: 80,
             ),
+            Mfooter()
           ]),
         ),
       ),

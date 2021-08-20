@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:myportfolio/Pages/aboutMe.dart';
 import 'package:myportfolio/Pages/community/community.dart';
-import 'package:myportfolio/Pages/contact.dart';
 import 'package:myportfolio/Pages/home.dart';
 import 'package:myportfolio/Pages/homeScreen.dart';
 import 'package:myportfolio/router%20animation/scaleRoute.dart';
@@ -78,16 +77,8 @@ class DesktopNavbar extends StatelessWidget {
                       },
                       child: Text("About Me",
                           style: TextStyle(color: Colors.white))),
-                  SizedBox(
-                    width: 30,
-                  ),
-                  TextButton(
-                    onPressed: () {
-                      Navigator.push(context, ScaleRoute(page: Contact()));
-                    },
-                    child:
-                        Text("Contact", style: TextStyle(color: Colors.white)),
-                  ),
+                  
+                  
                 ],
               ),
             )
@@ -115,7 +106,7 @@ class MobileNavbar extends StatelessWidget {
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
-                  fontSize: 30),
+                  fontSize: 25),
             ),
           ),
           Padding(
@@ -168,21 +159,6 @@ class MobileNavbar extends StatelessWidget {
                           style: TextStyle(
                               color: Colors.greenAccent,
                               fontWeight: FontWeight.w400))),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  ActionChip(
-                    autofocus: true,
-                    side: BorderSide(color: Colors.greenAccent),
-                    backgroundColor: Colors.white,
-                    onPressed: () {
-                      Navigator.pushNamed(context, ContactRouter);
-                    },
-                    label: Text("Contact",
-                        style: TextStyle(
-                            color: Colors.greenAccent,
-                            fontWeight: FontWeight.w400)),
-                  ),
                 ],
               ),
             ),
