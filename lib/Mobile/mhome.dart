@@ -16,7 +16,7 @@ class Mhome extends StatefulWidget {
 class _MhomeState extends State<Mhome> {
   var scrollcontroller = ScrollController();
 
-  var isVisible = true;
+  var isVisible = false;
 
   final TapGestureRecognizer _gestureRecognizer = TapGestureRecognizer()
     ..onTap = () async {
@@ -34,19 +34,24 @@ class _MhomeState extends State<Mhome> {
     scrollcontroller.addListener(() {
       if (scrollcontroller.position.atEdge) {
         if (scrollcontroller.position.pixels > 0) {
-          if (isVisible) {
+          if (!isVisible) {
             setState(() {
-              isVisible = false;
+              isVisible = true;
             });
           }
         }
-      } else {}
+      } else {
+        setState(() {
+          isVisible = false;
+        });
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: Visibility(
         visible: isVisible,
         child: FloatingActionButton(
@@ -61,14 +66,22 @@ class _MhomeState extends State<Mhome> {
               color: Colors.white,
             ),
             onPressed: () {
+              if (scrollcontroller.hasClients) {
+                Future.delayed(Duration.zero).then((value) => scrollcontroller
+                    .animateTo(scrollcontroller.position.minScrollExtent,
+                        duration: Duration(milliseconds: 300),
+                        curve: Curves.easeIn));
+              }
               // setState(() {
 
               // });
-              Navigator.pushNamed(context, HomeRouter);
+              // Navigator.pushNamed(context, HomeRouter);
             }),
       ),
+      bottomNavigationBar: Visibility(visible: isVisible, child: Mfooter()),
       // floatingActionButtonLocation: ,
       body: SingleChildScrollView(
+        controller: scrollcontroller,
         child: Container(
           child: Column(children: [
             Container(
@@ -428,9 +441,8 @@ class _MhomeState extends State<Mhome> {
               ),
             ),
             SizedBox(
-              height: 80,
+              height: 200,
             ),
-            Mfooter()
           ]),
         ),
       ),

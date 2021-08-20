@@ -9,7 +9,7 @@ class Mfooter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
-      height: 200,
+      height: 120,
       color: Colors.black87,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
